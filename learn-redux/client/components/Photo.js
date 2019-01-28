@@ -4,7 +4,7 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 const Photo = React.createClass({
   render() {
-    const { post, comments } = this.props;
+    const { post, i, comments } = this.props;
     return (
       <figure className="grid-figure">
         <div className="grid-photo-wrap">
@@ -15,6 +15,7 @@ const Photo = React.createClass({
               className="grid-photo"
             />
           </Link>
+
           <CSSTransitionGroup
             transitionName="like"
             transitionEnterTimeout={500}
@@ -30,7 +31,7 @@ const Photo = React.createClass({
           <p>{post.caption}</p>
           <div className="control-buttons">
             <button
-              onClick={this.props.increment.bind(null, this.props.i)}
+              onClick={this.props.increment.bind(null, i)}
               className="likes"
             >
               &hearts; {post.likes}

@@ -6,7 +6,7 @@ function posts(state = [], action) {
         ...state.slice(0, i), // before the one we're updating
         {
           ...state[i],
-          likes: state[i].likes + 1
+          likes: state[i].likes + 20
         },
         ...state.slice(i + 1) // after
       ];
